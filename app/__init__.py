@@ -13,8 +13,8 @@ def create_app():
 
     app.config.from_object(Config)
 
-    # Enable CORS for frontend development
-    CORS(app, resources={r"/api/*": {"origins": ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000", "http://127.0.0.1:3000"]}})
+    # Enable CORS for frontend development and production Render deployment
+    CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 
     db.init_app(app)
     jwt.init_app(app)

@@ -33,7 +33,7 @@ export const Login = () => {
       let msg = err.response?.data?.message;
       if (!msg) {
         if (!err.response) {
-          msg = "Cannot connect to Flask server at http://127.0.0.1:5000. Please start the backend.";
+          msg = "Cannot connect to backend server. Please check your connection or wait a moment while the server wakes up.";
         } else {
           msg = "Failed to sign in. Please verify your credentials.";
         }
